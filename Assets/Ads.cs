@@ -22,25 +22,11 @@ public class Ads : MonoBehaviour
 
 
         Instance = this;
-        Advertisements.Instance.Initialize();
     }
 
     void Update()
     {
-        if (Application.internetReachability == NetworkReachability.NotReachable)
-        {
-            Time.timeScale = 0;
-            Debug.Log("Error. Check internet connection!");
-            InternetAlert.SetActive(true);
-            //No internet
-        }
-        else
-        {
-            Time.timeScale = 1;
-            InternetAlert.SetActive(false);
-         
-            //Connected
-        }
+
     }
     // Start is called before the first frame update
     void Start()
@@ -230,13 +216,11 @@ public class Ads : MonoBehaviour
 
     public void ShowInterstitial()
     {
-        Advertisements.Instance.ShowInterstitial();
     }
 
    
     public void ShowRewardedVideo()
     {
-        Advertisements.Instance.ShowRewardedVideo(CompleteMethod);
     }
 
     private void CompleteMethod(bool completed)

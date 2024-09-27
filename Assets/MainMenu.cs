@@ -20,7 +20,6 @@ public class MainMenu : MonoBehaviour
     public void Play()
     {
         //Load Ad
-        Advertisements.Instance.ShowInterstitial();
         GlobalGameManager.Instance.Call();
     }
 

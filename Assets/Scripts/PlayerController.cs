@@ -109,10 +109,10 @@ public class PlayerController : MonoBehaviour
         else {
             isGrounded = false; 
         }
-        float InputX = joyStick.Horizontal;
-        float InputY = joyStick.Vertical;
-       // float InputX = Input.GetAxis("Horizontal");
-       // float InputY = Input.GetAxis("Vertical");
+        /*float InputX = joyStick.Horizontal;
+        float InputY = joyStick.Vertical;*/
+        float InputX = Input.GetAxis("Horizontal");
+        float InputY = Input.GetAxis("Vertical");
         Vector3 input = new Vector3(InputX * -1, 0, InputY * -1);
         move = Direction.TransformDirection(input);
         if (isGrounded && playerVelocity.y < 0)
@@ -245,10 +245,10 @@ public class PlayerController : MonoBehaviour
     {
         CameraHook.position = Vector3.SmoothDamp(CameraHook.position, transform.position + new Vector3(SettleX,
             SettleY, SettleZ), ref CameraFollowVelocity, CameraFollowSmooth);
-        MouseX += TouchPad.touchPadInput.x * MouseSpeed;
-        MouseY += TouchPad.touchPadInput.y * MouseSpeed;
-       // MouseX += Input.GetAxis("Mouse X") * MouseSpeed;
-      //  MouseY += Input.GetAxis("Mouse Y") * MouseSpeed;
+        /*MouseX += TouchPad.touchPadInput.x * MouseSpeed;
+        MouseY += TouchPad.touchPadInput.y * MouseSpeed;*/
+        MouseX += Input.GetAxis("Mouse X") * MouseSpeed;
+        MouseY += Input.GetAxis("Mouse Y") * MouseSpeed;
         Vector3 mouse = new Vector3(MouseY, MouseX, 0);
         CameraHook.rotation = Quaternion.Euler(mouse);
         Direction.rotation = Quaternion.Euler(new Vector3(0, mouse.y, 0));

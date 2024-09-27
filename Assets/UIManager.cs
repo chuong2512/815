@@ -16,14 +16,12 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         //Load Ad
-        GameObject.Find("Ads").GetComponent<Ads>().ShowInterstitial();
         Invoke("LoadAdLoop", 33f);
     }
 
     void LoadAdLoop()
     {
         //Load Ad
-        GameObject.Find("Ads").GetComponent<Ads>().ShowInterstitial();
         Invoke("RepeatAdLoop", 33f);
     }
 
@@ -41,6 +39,5 @@ public class UIManager : MonoBehaviour
     public void ReplayGame()
     {
         SceneManager.LoadScene(0);
-        GameObject.Find("Ads").GetComponent<Ads>().ShowInterstitial();
     }
 }
